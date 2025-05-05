@@ -1,0 +1,153 @@
+
+"use client";
+
+import type { FC } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' }, // Add Experience to nav
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const Navbar: FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('#home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+
+      // Active section highlighting
+      let currentSection = '#home';
+      const navHeightOffset = document.querySelector('nav')?.clientHeight || 70; // Get navbar height for offset
+
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.href.substring(1));
+        if (section) {
+            const rect = section.getBoundingClientRect();
+            // Check if the top of the section is within the viewport adjusted by navbar height
+            if (rect.top <= navHeightOffset && rect.bottom >= navHeightOffset) {
+                 currentSection = item.href;
+            }
+        }
+      });
+       setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+     e.preventDefault();
+     const targetId = href.substring(1);
+     const targetElement = document.getElementById(targetId);
+     if (targetElement) {
+       const navbarHeight = document.querySelector('nav')?.clientHeight || 64; // Adjust selector/fallback if needed
+       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+       const offsetPosition = elementPosition - navbarHeight;
+
+       window.scrollTo({
+         top: offsetPosition,
+         behavior: 'smooth'
+       });
+     }
+     setIsMobileMenuOpen(false); // Close mobile menu on link click
+   };
+
+  return (
+    <nav
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
+      )}
+    >
+      <div className="container mx-auto px-4 flex justify-between items-center h-16">
+        {/* Logo/Brand */}
+        <Link href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+          AdityaMewada.dev
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6 items-center">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={(e) => handleLinkClick(e, item.href)}
+              className={cn(
+                'text-sm font-medium hover:text-primary transition-colors',
+                activeSection === item.href ? 'text-primary nav-link-active' : 'text-foreground/80'
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+           <Button asChild variant="outline" size="sm" className="ml-4 border-primary text-primary hover:bg-primary/10">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </Button>
+        </div>
+
+        {/* Mobile Navigation Trigger */}
+        <div className="md:hidden">
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[250px] bg-background p-4">
+               <div className="flex justify-between items-center mb-6">
+                 <Link href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-xl font-bold text-primary">
+                    AdityaMewada.dev
+                 </Link>
+                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+                   <X className="h-6 w-6" />
+                   <span className="sr-only">Close menu</span>
+                 </Button>
+               </div>
+               <div className="flex flex-col space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleLinkClick(e, item.href)}
+                    className={cn(
+                      'text-lg font-medium hover:text-primary transition-colors text-center py-2 rounded',
+                       activeSection === item.href ? 'text-primary bg-primary/10' : 'text-foreground/90'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                 <Button asChild variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary/10 mt-4">
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
