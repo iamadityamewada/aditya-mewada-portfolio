@@ -71,7 +71,7 @@ const Navbar: FC = () => {
             </Link>
           ))}
            <Button asChild variant="outline" size="sm" className="ml-4 border-primary text-primary hover:bg-primary/10">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a href="https://drive.google.com/drive/folders/1u-3O0F5wKaK6ouQpt-pO7K9GEuck5aw_" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
         </div>
 
@@ -87,7 +87,7 @@ const Navbar: FC = () => {
             <SheetContent side="right" className="w-[250px] bg-background p-4">
                <div className="flex justify-between items-center mb-6">
                  <Link href="/" onClick={closeMobileMenu} className="text-xl font-bold text-primary">
-                    AdityaMewada.dev
+                    AdityaMewada.in
                  </Link>
                  <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                    <X className="h-6 w-6" />
@@ -109,7 +109,7 @@ const Navbar: FC = () => {
                   </Link>
                 ))}
                  <Button asChild variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary/10 mt-4">
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                  <a href="https://drive.google.com/drive/folders/1u-3O0F5wKaK6ouQpt-pO7K9GEuck5aw_" target="_blank" rel="noopener noreferrer">Resume</a>
                 </Button>
               </div>
             </SheetContent>
