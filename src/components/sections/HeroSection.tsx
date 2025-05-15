@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+              <a href="https://drive.google.com/drive/folders/1u-3O0F5wKaK6ouQpt-pO7K9GEuck5aw_" target="_blank" rel="noopener noreferrer">Download CV</a>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 transition-smooth">
                <Link href="/contact">Let's Talk</Link>
@@ -66,7 +66,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
              <Link href="mailto:er.adityamewada@gmail.com" aria-label="Email" className="text-foreground hover:text-primary transition-smooth">
                <Mail className="h-7 w-7" />
              </Link>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Resume" className="text-foreground hover:text-primary transition-smooth">
+              <a href="https://drive.google.com/drive/folders/1u-3O0F5wKaK6ouQpt-pO7K9GEuck5aw_" target="_blank" rel="noopener noreferrer" aria-label="View Resume" className="text-foreground hover:text-primary transition-smooth">
                <FileText className="h-7 w-7" />
              </a>
            </div>
