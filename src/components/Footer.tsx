@@ -21,7 +21,7 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-primary/80 via-accent/80 to-primary/80 py-12 text-primary-foreground"> 
       <div className="container mx-auto px-4 text-center">
         <Link href="/" className="text-3xl font-bold mb-8 inline-block hover:opacity-80 transition-opacity">
-          AdityaMewada.dev
+          AdityaMewada.in
         </Link>
 
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10 text-sm font-medium">
