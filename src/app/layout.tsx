@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Aditya Mewada Portfolio",
     images: [
       {
-        url: 'https://placehold.co/1200x630.png', 
+        url: 'profile.png', 
         width: 1200,
         height: 630,
         alt: 'Aditya Mewada Portfolio Banner',

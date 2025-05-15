@@ -22,7 +22,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
           <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-transparent to-transparent p-1 shadow-lg">
              <div className="bg-background rounded-[calc(1.5rem-4px)] h-full w-full overflow-hidden"> 
                 <Image
-                    src="/about1.png" 
+                    src="/profile.png" 
                     alt="Aditya Mewada"
                     width={400}
                     height={400}
@@ -53,7 +53,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
               <CardContent className="p-0">
                 <CardTitle className="text-lg font-semibold mb-1">Projects</CardTitle>
                 <CardDescription className="text-sm text-muted-foreground">
-                  10+ Completed <br/> & Deployed
+                  5+ Completed <br/> & 4+ Deployed
                 </CardDescription>
               </CardContent>
             </Card>

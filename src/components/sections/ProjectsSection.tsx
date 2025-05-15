@@ -2,7 +2,7 @@
 import Section from '@/components/ui/Section';
 import SectionTitle from '@/components/ui/SectionTitle';
 import ProjectCard from '@/components/ProjectCard';
-import type { Project } from '@/types'; // Assuming Project type definition
+import type { Project } from '@/types';
 
 const projects: Project[] = [
   {
@@ -12,8 +12,8 @@ const projects: Project[] = [
     githubFrontend: 'https://github.com/iamadityamewada/grocerywise_frontend',
     githubBackend: 'https://github.com/iamadityamewada/grocerywise_backend',
     liveDemo: 'https://grocerywise.adityamewada.in/',
-    imageUrl: 'https://picsum.photos/seed/grocerywise/600/400',
-    aiHint: 'grocery shopping list app interface', // Updated hint
+    imageUrl: '/grocerywise.png',
+    aiHint: 'grocery shopping list app interface', 
   },
   {
     title: 'BlogHub - MERN Blogging Platform',
@@ -21,8 +21,8 @@ const projects: Project[] = [
     techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Bootstrap', 'JWT'],
     github: 'https://github.com/iamadityamewada/BlogHub',
     liveDemo: 'https://bloghub-rho.vercel.app',
-    imageUrl: 'https://picsum.photos/seed/bloghub/600/400',
-     aiHint: 'blog platform interface dark theme', // Updated hint
+    imageUrl: '/bloghub.png',
+     aiHint: 'blog platform interface dark theme', 
   },
   {
     title: 'Detectify – Image Detection Web App (Frontend)',
@@ -30,19 +30,19 @@ const projects: Project[] = [
     techStack: ['React.js', 'JavaScript', 'REST API', 'UI/UX Design', 'AWS Rekognition'],
     github: 'https://github.com/iamadityamewada/Detectify',
     liveDemo: 'https://detectify-react.vercel.app/',
-    imageUrl: 'https://picsum.photos/seed/detectify/600/400',
-     aiHint: 'image recognition technology interface', // Updated hint
+    imageUrl: '/detectify.png',
+     aiHint: 'image recognition technology interface',
   },
    {
-    title: 'Personal Portfolio Website (This one!)', // Updated title
+    title: 'Personal Portfolio Website (This one!)', 
     description: 'Developed a fast, responsive portfolio using Next.js, Tailwind CSS, and TypeScript to showcase projects and technical skills, with smooth navigation and clean UI/UX.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ShadCN UI', 'Responsive Design'], // Added ShadCN
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'ShadCN UI', 'Responsive Design'], 
     github: 'https://github.com/iamadityamewada/aditya-mewada-portfolio',
-    liveDemo: 'https://adityamewada.in/', // Should be the current site
-    imageUrl: 'https://picsum.photos/seed/portfolio/600/400',
-    aiHint: 'modern web developer portfolio dark', // Updated hint
+    liveDemo: 'https://adityamewada.in/', 
+    imageUrl: '/portfolio.png',
+    aiHint: 'modern web developer portfolio dark', 
   },
-  // Add more projects as needed
+
 ];
 
 interface ProjectsSectionProps {
@@ -51,7 +51,7 @@ interface ProjectsSectionProps {
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ id }) => {
   return (
-    <Section id={id} className="bg-secondary"> {/* Match background */}
+    <Section id={id} className="bg-secondary"> {}
       <SectionTitle subtitle="My Recent Work" className="text-foreground">Portfolio</SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
