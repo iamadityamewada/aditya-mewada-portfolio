@@ -10,20 +10,20 @@ import { cn } from '@/lib/utils';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: "Aditya Mewada | Software Developer Portfolio",
-  description: "Aspiring Full Stack Developer specializing in React, Next.js, Node.js, Python, FastAPI. Explore my projects and skills.",
+  title: "Aditya Mewada | Website Development Services | Freelance Web development Services | Website Developement",
+  description: "Website Development Services by Aditya Mewada, a skilled Full Stack Developer specializing in React, Next.js, Node.js, Python, and FastAPI.",
   metadataBase: new URL('https://adityamewada.in'), 
   openGraph: {
-    title: "Aditya Mewada | Software Developer Portfolio",
-    description: "Aspiring Full Stack Developer specializing in React, Next.js, Node.js, Python, FastAPI. Explore my projects and skills.",
+    title: "Aditya Mewada | Website Development Services | Freelance Web development Services | Website Developement",
+    description: "Website Development Services by Aditya Mewada, a skilled Full Stack Developer specializing in React, Next.js, Node.js, Python, and FastAPI.",
     url: 'https://adityamewada.in', 
-    siteName: "Aditya Mewada Portfolio",
+    siteName: "Aditya Mewada | Website Development Services | Freelance Web development Services | Website Developement",
     images: [
       {
         url: 'profile.png', 
         width: 1200,
         height: 630,
-        alt: 'Aditya Mewada Portfolio Banner',
+        alt: 'Aditya Mewada | Website Development Services | Freelance Web development Services | Website Developement',
       },
     ],
     locale: 'en_US',
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Aditya Mewada | Software Developer Portfolio",
+    title: "Aditya Mewada | Website Development Services | Freelance Web development Services | Website Developement",
     description: "Aspiring Full Stack Developer specializing in React, Next.js, Node.js, Python, FastAPI.",
     images: ['https://placehold.co/1200x600.png'], 
   },
-  keywords: ['Full Stack Developer', 'React', 'Next.js', 'Node.js', 'Python', 'FastAPI', 'Portfolio', 'Web Developer', 'Aditya Mewada'],
+  keywords: ['Aditya Mewada', 'Web Development Services', 'Website Development Services', 'Freelance Web Development Services', 'React Developer', 'Next.js Developer', 'Node.js Developer', 'Python Developer', 'FastAPI Developer'],
 };
 
 
